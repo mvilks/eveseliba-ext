@@ -1,0 +1,31 @@
+.RadButton.copyButton {
+  background-color: #b6db51;
+  border-radius: 4px;
+  height: 25px;
+  padding: 0;
+  float: right;
+  margin-right: 4em;
+  margin-top: 1em;
+}
+
+.RadButton.copyButton input[type='submit'] {
+  text-indent: 0;
+  color: #080a04;
+  padding: 0 7px 0 27px;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0 none;
+  cursor: pointer;
+  font-family: Arial;
+  margin-bottom: 1.5px;
+  background-repeat: no-repeat;
+  background-size: 17px 18px;
+  background-position: left 5px center;
+}
+
+.RadButton.copyButton input:hover,
+.RadButton.copyButton input:active {
+  color: white;
+}

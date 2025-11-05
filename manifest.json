@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "E-veselība helper",
+  "author": "Māris Vilks <maris.vilks@expect.digital>",
+  "version": "0.1.1",
+  "description": "Allows a pharmacist to copy the prescription usage information from e-veselība portal.",
+  "homepage_url": "https://github.com/mvilks/eveseliba-ext",
+  "icons": {
+    "64": "icons/copy-prescription.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.eveseliba.gov.lv/resident*",
+        "https://www.eveseliba.gov.lv/pharmacist*"
+      ],
+      "js": ["main.js"],
+      "css": ["css/style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://www.eveseliba.gov.lv/*"],
+      "resources": ["img/copy-regular-24.png"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "eveseliba-helper@expect.digital"
+    }
+  }
+}
