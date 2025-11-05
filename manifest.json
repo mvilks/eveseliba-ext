@@ -29,8 +29,7 @@
       "id": "eveseliba-helper@expect.digital",
       "update_url": "https://github.com/mvilks/eveseliba-ext/updates.json",
       "data_collection_permissions": {
-	"required": [],
-	"optional": []
+	"required": ["none"]
       }
     }
   }
