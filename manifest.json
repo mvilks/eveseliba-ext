@@ -26,7 +26,8 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "eveseliba-helper@expect.digital"
+      "id": "eveseliba-helper@expect.digital",
+      "update_url": "https://github.com/mvilks/eveseliba-ext/updates.json"
     }
   }
 }
