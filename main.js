@@ -1,7 +1,9 @@
 (function (window, document, undefined) {
   const prescriptionIdFieldName = 'vm.Prescription.ID';
+  const patientIdFieldName = 'vm.Patient.PatientIDValue';
   const firstNameFieldName = 'vm.Patient.FirstName';
   const lastNameFieldName = 'vm.Patient.LastName';
+  const patientAddressFieldName = 'vm.Patient.AddressText';
   const drugTitleFieldName = 'vm.MedicalTreatment.DrugTitle';
   const usageInstructionsFieldName = 'vm.UseInstructions.UseInstruction';
   const IMAGE_PATH = 'img/copy-regular-24.png';
@@ -71,6 +73,14 @@
         };
       }
 
+      if (label.getAttribute('field') === patientIdFieldName) {
+        return {
+          ...acc,
+          patientId: label.querySelector('.ng-binding[ng-bind-html=field]')
+            .innerText,
+        };
+      }
+
       if (label.getAttribute('field') === firstNameFieldName) {
         return {
           ...acc,
@@ -83,6 +93,14 @@
         return {
           ...acc,
           lastName: label.querySelector('.ng-binding[ng-bind-html=field]')
+            .innerText,
+        };
+      }
+
+      if (label.getAttribute('field') === patientAddressFieldName) {
+        return {
+          ...acc,
+          patientAddress: label.querySelector('.ng-binding[ng-bind-html=field]')
             .innerText,
         };
       }

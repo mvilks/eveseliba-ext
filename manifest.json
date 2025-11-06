@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "E-veselība helper",
   "author": "Māris Vilks <maris.vilks@expect.digital>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Allows a pharmacist to copy the prescription usage information from e-veselība portal.",
   "homepage_url": "https://github.com/mvilks/eveseliba-ext",
   "icons": {
@@ -29,7 +29,7 @@
       "id": "eveseliba-helper@expect.digital",
       "update_url": "https://github.com/mvilks/eveseliba-ext/updates.json",
       "data_collection_permissions": {
-	"required": ["none"]
+        "required": ["none"]
       }
     }
   }

@@ -1,13 +1,12 @@
 {
-	"addons": {
-		"eveseliba-ext": {
-			"updates": [
-				{
-					"version": "0.1",
-					"update_link": "https://github.com/mvilks/eveseliba-ext/releases/download/v0.1.1/eveseliba_helper.xpi"
-				}
-			]
-		}
-	}
+  "addons": {
+    "eveseliba-helper@expect.digital": {
+      "updates": [
+        {
+          "version": "0.1.1",
+          "update_link": "https://github.com/mvilks/eveseliba-ext/releases/download/v0.1.1/eveseliba_helper.xpi"
+        }
+      ]
+    }
+  }
 }
-
