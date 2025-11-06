@@ -9,6 +9,10 @@
         {
           "version": "0.1.2",
           "update_link": "https://github.com/mvilks/eveseliba-ext/releases/download/v0.1.2/eveseliba_helper.xpi"
+        },
+        {
+          "version": "0.1.3",
+          "update_link": "https://github.com/mvilks/eveseliba-ext/releases/download/v0.1.3/eveseliba_helper-0.1.3.xpi"
         }
       ]
     }

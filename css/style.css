@@ -29,3 +29,17 @@
 .RadButton.copyButton input:active {
   color: white;
 }
+
+@keyframes copied-jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.copied-animated {
+  animation: copied-jump 0.2s ease-in-out;
+}

@@ -1,5 +1,6 @@
 EXTENSION_NAME=eveseliba_helper
-XPI_FILE=$(EXTENSION_NAME).xpi
+VERSION=$(shell jq -r '.version' manifest.json)
+XPI_FILE=$(EXTENSION_NAME)-$(VERSION).xpi
 SOURCES=css/style.css icons/copy-prescription.png img/copy-regular-24.png main.js manifest.json
 
 .PHONY: all clean

@@ -6,7 +6,13 @@
   const patientAddressFieldName = 'vm.Patient.AddressText';
   const drugTitleFieldName = 'vm.MedicalTreatment.DrugTitle';
   const usageInstructionsFieldName = 'vm.UseInstructions.UseInstruction';
-  const IMAGE_PATH = 'img/copy-regular-24.png';
+
+  const normalImagePath = 'img/copy-regular-24.png';
+  const successImagePath = 'img/check-24.png';
+  const normalText = 'Kopēt recepti';
+  const successText = 'Nokopēta!';
+
+  let buttonTimeout;
 
   // Create if not exists the copy button and append it in the button row
   function addButton() {
@@ -19,11 +25,11 @@
       return;
     }
 
-    const imageUrl = chrome.runtime.getURL(IMAGE_PATH);
+    const imageUrl = chrome.runtime.getURL(normalImagePath);
 
     const input = document.createElement('input');
     input.setAttribute('type', 'submit');
-    input.setAttribute('value', 'Kopēt recepti');
+    input.setAttribute('value', normalText);
     input.style.backgroundImage = `url(${imageUrl})`;
 
     const copyButton = document.createElement('a');
@@ -128,7 +134,51 @@
     window.console.log('fullInfo', fullInfo);
     window.navigator.clipboard.writeText(JSON.stringify(fullInfo));
 
+    setSuccessButton();
+
     return false;
+  }
+
+  function setSuccessButton() {
+    if (buttonTimeout) {
+      clearTimeout(buttonTimeout);
+    }
+
+    const button = document.querySelector('.RadButton.copyButton');
+    if (!button) {
+      return;
+    }
+
+    const input = button.querySelector('input');
+    if (!input) {
+      return;
+    }
+
+    setTimeout(resetButton, 1500);
+
+    const imageUrl = chrome.runtime.getURL(successImagePath);
+
+    button.classList.add('copied-animated');
+    input.value = successText;
+    input.style.backgroundImage = `url(${imageUrl})`;
+  }
+
+  function resetButton() {
+    const button = document.querySelector('.RadButton.copyButton');
+    if (!button) {
+      return;
+    }
+
+    const input = button.querySelector('input');
+    if (!input) {
+      return;
+    }
+
+    const imageUrl = chrome.runtime.getURL(normalImagePath);
+
+    button.classList.remove('copied-animated');
+    input.value = normalText;
+    input.style.backgroundImage = `url(${imageUrl})`;
   }
 
   function checkAndToggleButton() {
